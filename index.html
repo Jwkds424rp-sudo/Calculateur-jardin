@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -164,11 +165,32 @@ button:active {
   display: none !important;
 }
 
-.helper {
-  color: #687168;
-  font-size: 13px;
-  line-height: 1.45;
-  margin-top: 7px;
+.payment-box {
+  margin-top: 20px;
+  padding: 22px;
+  border-radius: 20px;
+  background: #f0f8f1;
+  border: 1px solid #cce5cf;
+  text-align: center;
+}
+
+.payment-title {
+  font-size: 14px;
+  color: #617061;
+  font-weight: 700;
+}
+
+.payment-price {
+  font-size: 37px;
+  font-weight: 900;
+  margin: 8px 0;
+  color: #155f2d;
+}
+
+.payment-text {
+  color: #465246;
+  line-height: 1.5;
+  font-size: 15px;
 }
 
 .result {
@@ -274,7 +296,8 @@ button:active {
     grid-template-columns: 1fr 1fr;
   }
 
-  .price {
+  .price,
+  .payment-price {
     font-size: 31px;
   }
 }
@@ -356,7 +379,6 @@ button:active {
     </div>
   </div>
 
-
   <div class="card">
 
     <div class="step">Étape 2</div>
@@ -385,12 +407,33 @@ button:active {
       step="1"
     >
 
-    <button onclick="calculer()">
-      Vérifier mon devis
+    <button onclick="preparerPaiement()">
+      Voir mon estimation — 9,99 €
     </button>
 
-  </div>
+    <div id="paiement" class="payment-box hidden">
 
+      <div class="payment-title">
+        Votre estimation est prête
+      </div>
+
+      <div class="payment-price">
+        9,99 €
+      </div>
+
+      <div class="payment-text">
+        Votre estimation personnalisée a été calculée.
+        <br>
+        Payez 9,99 € pour accéder au résultat.
+      </div>
+
+      <button onclick="ouvrirStripe()">
+        Payer 9,99 € et voir mon résultat
+      </button>
+
+    </div>
+
+  </div>
 
   <div id="resultat" class="result">
 
@@ -435,7 +478,6 @@ button:active {
 
   </div>
 
-
   <div class="footer">
     Prix Jardin — outil d'estimation indicative des travaux de jardin.
     <br>
@@ -444,10 +486,14 @@ button:active {
 
 </div>
 
-
 <script>
 
 let serviceActuel = "tonte";
+
+const STRIPE_URL =
+  "https://buy.stripe.com/7sY8wO3bBfKu0fA1TqdEs00";
+
+let estimationPrete = false;
 
 
 function choisirService(service, element) {
@@ -461,6 +507,11 @@ function choisirService(service, element) {
   element.classList.add("active");
 
   afficherQuestions();
+
+  document.getElementById("paiement").classList.add("hidden");
+  document.getElementById("resultat").classList.remove("show");
+
+  estimationPrete = false;
 }
 
 
@@ -965,7 +1016,7 @@ function arrondir(nombre) {
 }
 
 
-function calculer() {
+function calculer(preparation = false) {
 
   const zone = val("zone");
   const devis = val("devis");
@@ -979,7 +1030,7 @@ function calculer() {
 
     alert("Entre le montant de ton devis.");
 
-    return;
+    return false;
   }
 
 
@@ -991,7 +1042,7 @@ function calculer() {
 
     if (!surface || surface <= 0) {
       alert("Entre la surface à tondre.");
-      return;
+      return false;
     }
 
     let tauxBas;
@@ -1032,7 +1083,6 @@ function calculer() {
 
     bas += val("evac");
     haut += val("evac");
-
   }
 
 
@@ -1044,7 +1094,7 @@ function calculer() {
 
     if (!longueur || longueur <= 0) {
       alert("Entre la longueur de la haie.");
-      return;
+      return false;
     }
 
     bas = longueur * 4;
@@ -1068,7 +1118,7 @@ function calculer() {
 
     if (!surface || surface <= 0) {
       alert("Entre la surface.");
-      return;
+      return false;
     }
 
     bas = Math.max(60, surface * 0.35);
@@ -1130,7 +1180,7 @@ function calculer() {
 
     if (!diametre || diametre <= 0) {
       alert("Entre le diamètre de la souche.");
-      return;
+      return false;
     }
 
     let facteurTaille = Math.max(0.7, diametre / 50);
@@ -1163,7 +1213,7 @@ function calculer() {
 
     if (!longueur || longueur <= 0) {
       alert("Entre la longueur de la haie.");
-      return;
+      return false;
     }
 
     bas = longueur * 20;
@@ -1185,7 +1235,7 @@ function calculer() {
 
     if (!surface || surface <= 0) {
       alert("Entre la surface du jardin.");
-      return;
+      return false;
     }
 
     const heures = Math.max(1.5, surface / 180);
@@ -1208,7 +1258,7 @@ function calculer() {
 
     if (!volume || volume <= 0) {
       alert("Entre le volume de déchets.");
-      return;
+      return false;
     }
 
     bas = Math.max(40, volume * 30);
@@ -1227,7 +1277,7 @@ function calculer() {
 
     if (!surface || surface <= 0) {
       alert("Entre la surface du terrain.");
-      return;
+      return false;
     }
 
     const heures = Math.max(2, surface / 120);
@@ -1265,14 +1315,11 @@ function calculer() {
   document.getElementById("prix").textContent =
     bas + " € – " + haut + " €";
 
-
   document.getElementById("devisAffiche").textContent =
     devis + " €";
 
-
   document.getElementById("bas").textContent =
     bas + " €";
-
 
   document.getElementById("haut").textContent =
     haut + " €";
@@ -1299,7 +1346,6 @@ function calculer() {
   else if (devis <= haut) {
 
     statut.textContent = "🟢 Dans la moyenne";
-
     statut.classList.add("green");
 
     texte =
@@ -1310,7 +1356,6 @@ function calculer() {
   else if (devis <= haut * 1.25) {
 
     statut.textContent = "🟠 Plutôt élevé";
-
     statut.classList.add("orange");
 
     texte =
@@ -1321,7 +1366,6 @@ function calculer() {
   else {
 
     statut.textContent = "🔴 Très élevé";
-
     statut.classList.add("red");
 
     texte =
@@ -1337,13 +1381,66 @@ function calculer() {
 
   document.getElementById("resultText").innerHTML = texte;
 
-  document.getElementById("resultat").classList.add("show");
 
-  document.getElementById("resultat").scrollIntoView({
+  /*
+    IMPORTANT :
+    Pendant la préparation du paiement, le résultat
+    est calculé mais reste invisible.
+  */
+
+  if (!preparation) {
+
+    document.getElementById("resultat").classList.add("show");
+
+    document.getElementById("resultat").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+
+  return true;
+}
+
+
+function preparerPaiement() {
+
+  document.getElementById("resultat").classList.remove("show");
+
+  const ok = calculer(true);
+
+  if (!ok) {
+    return;
+  }
+
+  estimationPrete = true;
+
+  document.getElementById("paiement").classList.remove("hidden");
+
+  document.getElementById("paiement").scrollIntoView({
     behavior: "smooth",
-    block: "start"
+    block: "center"
   });
+}
 
+
+function ouvrirStripe() {
+
+  if (!estimationPrete) {
+    alert("Prépare d'abord ton estimation.");
+    return;
+  }
+
+  /*
+    On mémorise que l'utilisateur avait préparé
+    une estimation avant de partir sur Stripe.
+  */
+
+  sessionStorage.setItem(
+    "prixJardinEstimationPrete",
+    "1"
+  );
+
+  window.location.href = STRIPE_URL;
 }
 
 
@@ -1351,13 +1448,18 @@ function recommencer() {
 
   document.getElementById("resultat").classList.remove("show");
 
+  document.getElementById("paiement").classList.add("hidden");
+
   document.getElementById("devis").value = "";
+
+  estimationPrete = false;
+
+  sessionStorage.removeItem("prixJardinEstimationPrete");
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
 }
 
 
@@ -1367,3 +1469,4 @@ afficherQuestions();
 
 </body>
 </html>
+```
