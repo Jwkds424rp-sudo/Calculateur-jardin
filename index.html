@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,269 +8,45 @@
 
 <style>
 *{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-background:#f4f7f3;
-color:#172018
-}
-
-.container{
-width:100%;
-max-width:760px;
-margin:auto;
-padding:24px 16px 50px
-}
-
-.header{
-text-align:center;
-padding:18px 0 28px
-}
-
-.logo{
-display:inline-block;
-font-size:15px;
-font-weight:800;
-color:#18833b;
-letter-spacing:1px;
-text-transform:uppercase;
-margin-bottom:12px
-}
-
-h1{
-margin:0;
-font-size:36px;
-line-height:1.08;
-letter-spacing:-1px
-}
-
-.subtitle{
-margin:14px auto 0;
-max-width:600px;
-color:#647064;
-font-size:17px;
-line-height:1.5
-}
-
-.card{
-background:#fff;
-border-radius:22px;
-padding:24px;
-box-shadow:0 8px 30px rgba(0,0,0,.07);
-margin-bottom:18px
-}
-
-.step{
-font-size:13px;
-font-weight:800;
-color:#18833b;
-text-transform:uppercase;
-letter-spacing:.8px;
-margin-bottom:8px
-}
-
-h2{
-margin:0 0 18px;
-font-size:24px
-}
-
-label{
-display:block;
-margin:18px 0 8px;
-font-weight:700;
-font-size:15px
-}
-
-input,select{
-width:100%;
-padding:15px;
-border:1px solid #d2d9d2;
-border-radius:12px;
-background:#fff;
-color:#172018;
-font-size:16px;
-outline:none
-}
-
-input:focus,select:focus{
-border-color:#18833b;
-box-shadow:0 0 0 3px rgba(24,131,59,.10)
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px
-}
-
-.service{
-border:2px solid #e0e6e0;
-background:#fff;
-border-radius:15px;
-padding:15px 10px;
-text-align:center;
-cursor:pointer;
-font-weight:700;
-min-height:82px;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-gap:5px;
-transition:.15s
-}
-
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f4f7f3;color:#172018}
+.container{width:100%;max-width:760px;margin:auto;padding:24px 16px 50px}
+.header{text-align:center;padding:18px 0 28px}
+.logo{display:inline-block;font-size:15px;font-weight:800;color:#18833b;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+h1{margin:0;font-size:36px;line-height:1.08;letter-spacing:-1px}
+.subtitle{margin:14px auto 0;max-width:600px;color:#647064;font-size:17px;line-height:1.5}
+.card{background:#fff;border-radius:22px;padding:24px;box-shadow:0 8px 30px rgba(0,0,0,.07);margin-bottom:18px}
+.step{font-size:13px;font-weight:800;color:#18833b;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+h2{margin:0 0 18px;font-size:24px}
+label{display:block;margin:18px 0 8px;font-weight:700;font-size:15px}
+input,select{width:100%;padding:15px;border:1px solid #d2d9d2;border-radius:12px;background:#fff;color:#172018;font-size:16px;outline:none}
+input:focus,select:focus{border-color:#18833b;box-shadow:0 0 0 3px rgba(24,131,59,.10)}
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.service{border:2px solid #e0e6e0;background:#fff;border-radius:15px;padding:15px 10px;text-align:center;cursor:pointer;font-weight:700;min-height:82px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;transition:.15s}
 .service span{font-size:27px}
 .service small{font-size:13px}
-
-.service.active{
-border-color:#18833b;
-background:#edf8ef
-}
-
-button{
-width:100%;
-border:0;
-border-radius:13px;
-padding:16px;
-margin-top:22px;
-background:#18833b;
-color:#fff;
-font-size:17px;
-font-weight:800;
-cursor:pointer
-}
-
+.service.active{border-color:#18833b;background:#edf8ef}
+button{width:100%;border:0;border-radius:13px;padding:16px;margin-top:22px;background:#18833b;color:#fff;font-size:17px;font-weight:800;cursor:pointer}
+button:disabled{opacity:.65;cursor:wait}
 button:active{transform:scale(.99)}
-
-.secondary{
-background:#eef3ee;
-color:#172018
-}
-
-.hidden{
-display:none!important
-}
-
-.payment-box{
-margin-top:20px;
-padding:22px;
-border-radius:20px;
-background:#f0f8f1;
-border:1px solid #cce5cf;
-text-align:center
-}
-
-.payment-title{
-font-size:14px;
-color:#617061;
-font-weight:700
-}
-
-.payment-price{
-font-size:37px;
-font-weight:900;
-margin:8px 0;
-color:#155f2d
-}
-
-.payment-text{
-color:#465246;
-line-height:1.5;
-font-size:15px
-}
-
-.result{
-display:none;
-margin-top:20px;
-border-radius:20px;
-padding:22px;
-text-align:center;
-background:#f0f8f1;
-border:1px solid #cce5cf
-}
-
-.result.show{
-display:block
-}
-
-.result-title{
-font-size:14px;
-color:#617061;
-font-weight:700
-}
-
-.price{
-font-size:37px;
-font-weight:900;
-margin:8px 0;
-color:#155f2d
-}
-
-.status{
-display:inline-block;
-border-radius:30px;
-padding:8px 15px;
-font-weight:800;
-margin:8px 0 15px
-}
-
-.green{
-background:#dff3e2;
-color:#176b2d
-}
-
-.orange{
-background:#fff0d2;
-color:#8a5700
-}
-
-.red{
-background:#ffe1e1;
-color:#a52222
-}
-
-.result-text{
-color:#465246;
-line-height:1.5;
-font-size:15px
-}
-
-.detail{
-margin-top:16px;
-padding-top:15px;
-border-top:1px solid #d8e5d9;
-text-align:left
-}
-
-.detail-row{
-display:flex;
-justify-content:space-between;
-gap:10px;
-padding:7px 0;
-font-size:14px
-}
-
-.warning{
-margin-top:15px;
-padding:13px;
-border-radius:12px;
-background:#fff8e8;
-color:#71530e;
-font-size:13px;
-line-height:1.45;
-text-align:left
-}
-
-.footer{
-text-align:center;
-color:#778077;
-font-size:12px;
-line-height:1.5;
-margin-top:25px
-}
-
+.secondary{background:#eef3ee;color:#172018}
+.hidden{display:none!important}
+.payment-box{margin-top:20px;padding:22px;border-radius:20px;background:#f0f8f1;border:1px solid #cce5cf;text-align:center}
+.payment-title{font-size:14px;color:#617061;font-weight:700}
+.payment-price{font-size:37px;font-weight:900;margin:8px 0;color:#155f2d}
+.payment-text{color:#465246;line-height:1.5;font-size:15px}
+.result{display:none;margin-top:20px;border-radius:20px;padding:22px;text-align:center;background:#f0f8f1;border:1px solid #cce5cf}
+.result.show{display:block}
+.result-title{font-size:14px;color:#617061;font-weight:700}
+.price{font-size:37px;font-weight:900;margin:8px 0;color:#155f2d}
+.status{display:inline-block;border-radius:30px;padding:8px 15px;font-weight:800;margin:8px 0 15px}
+.green{background:#dff3e2;color:#176b2d}
+.orange{background:#fff0d2;color:#8a5700}
+.red{background:#ffe1e1;color:#a52222}
+.result-text{color:#465246;line-height:1.5;font-size:15px}
+.detail{margin-top:16px;padding-top:15px;border-top:1px solid #d8e5d9;text-align:left}
+.detail-row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;font-size:14px}
+.warning{margin-top:15px;padding:13px;border-radius:12px;background:#fff8e8;color:#71530e;font-size:13px;line-height:1.45;text-align:left}
+.footer{text-align:center;color:#778077;font-size:12px;line-height:1.5;margin-top:25px}
 @media(max-width:480px){
 h1{font-size:31px}
 .card{padding:19px}
@@ -287,12 +62,9 @@ h1{font-size:31px}
 
 <div class="header">
 <div class="logo">Prix Jardin</div>
-
 <h1>Votre devis est-il au bon prix ?</h1>
-
 <p class="subtitle">
-Estimez en quelques secondes le prix habituellement constaté
-pour vos travaux de jardin.
+Estimez en quelques secondes le prix habituellement constaté pour vos travaux de jardin.
 </p>
 </div>
 
@@ -363,14 +135,7 @@ pour vos travaux de jardin.
 <div id="questions"></div>
 
 <label for="devis">Montant de votre devis</label>
-
-<input
-type="number"
-id="devis"
-placeholder="Exemple : 450"
-min="0"
-step="1"
->
+<input type="number" id="devis" placeholder="Exemple : 450" min="0" step="1">
 
 <button onclick="preparerPaiement()">
 Continuer — 9,99 €
@@ -378,17 +143,12 @@ Continuer — 9,99 €
 
 <div id="paiement" class="payment-box hidden">
 
-<div class="payment-title">
-Estimation prête
-</div>
+<div class="payment-title">Estimation prête</div>
 
-<div class="payment-price">
-9,99 €
-</div>
+<div class="payment-price">9,99 €</div>
 
 <div class="payment-text">
-Votre estimation personnalisée est prête.
-<br>
+Votre estimation personnalisée est prête.<br>
 Payez 9,99 € pour afficher votre résultat.
 </div>
 
@@ -397,7 +157,6 @@ Payer 9,99 € et voir mon résultat
 </button>
 
 </div>
-
 </div>
 
 <div id="resultat" class="result">
@@ -432,9 +191,7 @@ Estimation indicative du prix
 </div>
 
 <div class="warning">
-⚠️ Cette estimation est indicative. Un chantier réel peut varier
-selon la région, l'accès, le matériel nécessaire, l'état du terrain
-et les contraintes particulières.
+⚠️ Cette estimation est indicative. Un chantier réel peut varier selon la région, l'accès, le matériel nécessaire, l'état du terrain et les contraintes particulières.
 </div>
 
 <button class="secondary" onclick="recommencer()">
@@ -444,8 +201,7 @@ Faire une nouvelle estimation
 </div>
 
 <div class="footer">
-Prix Jardin — outil d'estimation indicative des travaux de jardin.
-<br>
+Prix Jardin — outil d'estimation indicative des travaux de jardin.<br>
 Les résultats ne constituent pas un devis professionnel.
 </div>
 
@@ -456,28 +212,25 @@ Les résultats ne constituent pas un devis professionnel.
 let serviceActuel="tonte";
 let estimationPrete=false;
 
-const STRIPE_URL=
-"https://buy.stripe.com/7sY8wO3bBfKu0fA1TqdEs00";
-
-
 function choisirService(service,element){
 
 serviceActuel=service;
 
-document.querySelectorAll(".service").forEach(function(item){
-item.classList.remove("active");
-});
+document.querySelectorAll(".service")
+.forEach(item=>item.classList.remove("active"));
 
 element.classList.add("active");
 
 afficherQuestions();
 
-document.getElementById("paiement").classList.add("hidden");
-document.getElementById("resultat").classList.remove("show");
+document.getElementById("paiement")
+.classList.add("hidden");
+
+document.getElementById("resultat")
+.classList.remove("show");
 
 estimationPrete=false;
 }
-
 
 function champ(label,id,type="number",placeholder="",options=null){
 
@@ -487,8 +240,12 @@ if(options){
 
 html+=`<select id="${id}">`;
 
-options.forEach(function(option){
-html+=`<option value="${option.value}">${option.label}</option>`;
+options.forEach(option=>{
+
+html+=`<option value="${option.value}">
+${option.label}
+</option>`;
+
 });
 
 html+=`</select>`;
@@ -501,241 +258,442 @@ type="${type}"
 id="${id}"
 placeholder="${placeholder}"
 min="0"
-step="any"
->
+step="any">
 `;
+
 }
 
 return html;
 }
 
-
 function afficherQuestions(){
 
 const q=document.getElementById("questions");
-let html="";
 
+let html="";
 
 if(serviceActuel==="tonte"){
 
-html+=champ("Surface à tondre (m²)","surface","number","Exemple : 500");
+html+=champ(
+"Surface à tondre (m²)",
+"surface",
+"number",
+"Exemple : 500"
+);
 
-html+=champ("État de l'herbe","etat","select","",[
+html+=champ(
+"État de l'herbe",
+"etat",
+"select",
+"",
+[
 {value:"1",label:"Entretien normal"},
 {value:"1.20",label:"Herbe haute"},
 {value:"1.45",label:"Très haute / difficile"}
-]);
+]
+);
 
-html+=champ("Accessibilité","acces","select","",[
+html+=champ(
+"Accessibilité",
+"acces",
+"select",
+"",
+[
 {value:"1",label:"Facile"},
 {value:"1.12",label:"Moyenne"},
 {value:"1.25",label:"Difficile"}
-]);
+]
+);
 
-html+=champ("Évacuation de l'herbe","evac","select","",[
+html+=champ(
+"Évacuation de l'herbe",
+"evac",
+"select",
+"",
+[
 {value:"0",label:"Non"},
 {value:"30",label:"Oui"}
-]);
-}
+]
+);
 
+}
 
 if(serviceActuel==="haie"){
 
-html+=champ("Longueur de la haie (m)","longueur","number","Exemple : 30");
+html+=champ(
+"Longueur de la haie (m)",
+"longueur",
+"number",
+"Exemple : 30"
+);
 
-html+=champ("Hauteur","hauteur","select","",[
+html+=champ(
+"Hauteur",
+"hauteur",
+"select",
+"",
+[
 {value:"1",label:"Moins de 1,5 m"},
 {value:"1.25",label:"1,5 à 2 m"},
 {value:"1.50",label:"2 à 3 m"},
 {value:"1.80",label:"Plus de 3 m"}
-]);
+]
+);
 
-html+=champ("Densité de la haie","densite","select","",[
+html+=champ(
+"Densité de la haie",
+"densite",
+"select",
+"",
+[
 {value:"1",label:"Normale"},
 {value:"1.20",label:"Dense"},
 {value:"1.40",label:"Très dense"}
-]);
+]
+);
 
-html+=champ("Évacuation des branches","evac","select","",[
+html+=champ(
+"Évacuation des branches",
+"evac",
+"select",
+"",
+[
 {value:"0",label:"Non"},
 {value:"40",label:"Oui"}
-]);
-}
+]
+);
 
+}
 
 if(serviceActuel==="debroussaillage"){
 
-html+=champ("Surface à débroussailler (m²)","surface","number","Exemple : 1000");
+html+=champ(
+"Surface à débroussailler (m²)",
+"surface",
+"number",
+"Exemple : 1000"
+);
 
-html+=champ("État du terrain","etat","select","",[
+html+=champ(
+"État du terrain",
+"etat",
+"select",
+"",
+[
 {value:"1",label:"Végétation légère"},
 {value:"1.25",label:"Végétation moyenne"},
 {value:"1.55",label:"Terrain très encombré"}
-]);
+]
+);
 
-html+=champ("Accessibilité","acces","select","",[
+html+=champ(
+"Accessibilité",
+"acces",
+"select",
+"",
+[
 {value:"1",label:"Facile"},
 {value:"1.15",label:"Moyenne"},
 {value:"1.30",label:"Difficile"}
-]);
+]
+);
 
-html+=champ("Évacuation","evac","select","",[
+html+=champ(
+"Évacuation",
+"evac",
+"select",
+"",
+[
 {value:"0",label:"Non"},
 {value:"60",label:"Oui"}
-]);
-}
+]
+);
 
+}
 
 if(serviceActuel==="elagage"){
 
-html+=champ("Hauteur de l'arbre","hauteur","select","",[
+html+=champ(
+"Hauteur de l'arbre",
+"hauteur",
+"select",
+"",
+[
 {value:"160",label:"Moins de 5 m"},
 {value:"375",label:"5 à 10 m"},
 {value:"750",label:"10 à 15 m"},
 {value:"1150",label:"15 à 20 m"},
 {value:"1500",label:"Plus de 20 m"}
-]);
+]
+);
 
-html+=champ("Type d'élagage","typeElagage","select","",[
+html+=champ(
+"Type d'élagage",
+"typeElagage",
+"select",
+"",
+[
 {value:"1",label:"Entretien"},
 {value:"0.90",label:"Bois mort"},
 {value:"1.10",label:"Adaptation / éclaircie"},
 {value:"1.45",label:"Étêtage / intervention lourde"}
-]);
+]
+);
 
-html+=champ("Difficulté d'accès","acces","select","",[
+html+=champ(
+"Accès",
+"acces",
+"select",
+"",
+[
 {value:"1",label:"Facile"},
-{value:"1.20",label:"Moyenne"},
+{value:"1.20",label:"Moyen"},
 {value:"1.45",label:"Difficile"}
-]);
+]
+);
 
-html+=champ("Évacuation des branches","evac","select","",[
+html+=champ(
+"Évacuation",
+"evac",
+"select",
+"",
+[
 {value:"0",label:"Non"},
 {value:"50",label:"Oui"}
-]);
-}
+]
+);
 
+}
 
 if(serviceActuel==="abattage"){
 
-html+=champ("Hauteur de l'arbre","hauteur","select","",[
-{value:"180",label:"2 à 5 m"},
+html+=champ(
+"Hauteur de l'arbre",
+"hauteur",
+"select",
+"",
+[
+{value:"180",label:"Moins de 5 m"},
 {value:"300",label:"5 à 10 m"},
 {value:"460",label:"10 à 15 m"},
 {value:"600",label:"15 à 20 m"},
 {value:"700",label:"20 à 25 m"},
-{value:"850",label:"Plus de 25 m — devis recommandé"}
-]);
+{value:"850",label:"Plus de 25 m"}
+]
+);
 
-html+=champ("Difficulté du chantier","acces","select","",[
-{value:"1",label:"Facile / espace dégagé"},
+html+=champ(
+"Accessibilité",
+"acces",
+"select",
+"",
+[
+{value:"1",label:"Facile"},
 {value:"1.25",label:"Moyenne"},
-{value:"1.50",label:"Difficile / proche bâtiment"}
-]);
+{value:"1.50",label:"Difficile"}
+]
+);
 
-html+=champ("Évacuation du bois","evac","select","",[
+html+=champ(
+"Évacuation",
+"evac",
+"select",
+"",
+[
 {value:"0",label:"Non"},
 {value:"100",label:"Oui"}
-]);
-}
+]
+);
 
+}
 
 if(serviceActuel==="dessouchage"){
 
-html+=champ("Diamètre de la souche (cm)","diametre","number","Exemple : 50");
+html+=champ(
+"Diamètre de la souche (cm)",
+"diametre",
+"number",
+"Exemple : 50"
+);
 
-html+=champ("Méthode","methode","select","",[
-{value:"220",label:"Manuel"},
-{value:"325",label:"Rognage"},
+html+=champ(
+"Méthode",
+"methode",
+"select",
+"",
+[
+{value:"220",label:"Manuelle"},
+{value:"325",label:"Standard"},
 {value:"550",label:"Mécanique"}
-]);
+]
+);
 
-html+=champ("Accessibilité","acces","select","",[
+html+=champ(
+"Accessibilité",
+"acces",
+"select",
+"",
+[
 {value:"1",label:"Facile"},
 {value:"1.20",label:"Moyenne"},
 {value:"1.45",label:"Difficile"}
-]);
-}
+]
+);
 
+}
 
 if(serviceActuel==="arrachage"){
 
-html+=champ("Longueur de haie (m)","longueur","number","Exemple : 20");
+html+=champ(
+"Longueur de haie (m)",
+"longueur",
+"number",
+"Exemple : 20"
+);
 
-html+=champ("Densité / difficulté","densite","select","",[
+html+=champ(
+"Densité / difficulté",
+"densite",
+"select",
+"",
+[
 {value:"1",label:"Normale"},
 {value:"1.25",label:"Dense"},
 {value:"1.50",label:"Très dense / ancienne"}
-]);
+]
+);
 
-html+=champ("Évacuation","evac","select","",[
+html+=champ(
+"Évacuation",
+"evac",
+"select",
+"",
+[
 {value:"0",label:"Non"},
 {value:"80",label:"Oui"}
-]);
-}
+]
+);
 
+}
 
 if(serviceActuel==="entretien"){
 
-html+=champ("Surface du jardin (m²)","surface","number","Exemple : 500");
+html+=champ(
+"Surface du jardin (m²)",
+"surface",
+"number",
+"Exemple : 500"
+);
 
-html+=champ("Niveau d'entretien","niveau","select","",[
+html+=champ(
+"Niveau d'entretien",
+"niveau",
+"select",
+"",
+[
 {value:"1",label:"Entretien léger"},
 {value:"1.30",label:"Entretien classique"},
 {value:"1.70",label:"Entretien important"}
-]);
+]
+);
 
-html+=champ("Accessibilité","acces","select","",[
+html+=champ(
+"Accessibilité",
+"acces",
+"select",
+"",
+[
 {value:"1",label:"Facile"},
 {value:"1.15",label:"Moyenne"},
 {value:"1.30",label:"Difficile"}
-]);
-}
+]
+);
 
+}
 
 if(serviceActuel==="evacuation"){
 
-html+=champ("Volume de déchets (m³)","volume","number","Exemple : 2");
+html+=champ(
+"Volume de déchets (m³)",
+"volume",
+"number",
+"Exemple : 2"
+);
 
-html+=champ("Type de déchets","typeDechet","select","",[
+html+=champ(
+"Type de déchets",
+"typeDechet",
+"select",
+"",
+[
 {value:"1",label:"Déchets verts légers"},
 {value:"1.20",label:"Branches / taille de haie"},
 {value:"1.40",label:"Gros volume / bois"}
-]);
+]
+);
 
-html+=champ("Accès pour le véhicule","acces","select","",[
+html+=champ(
+"Accès pour le véhicule",
+"acces",
+"select",
+"",
+[
 {value:"1",label:"Facile"},
 {value:"1.20",label:"Moyen"},
 {value:"1.40",label:"Difficile"}
-]);
-}
+]
+);
 
+}
 
 if(serviceActuel==="remise"){
 
-html+=champ("Surface du terrain (m²)","surface","number","Exemple : 1000");
+html+=champ(
+"Surface du terrain (m²)",
+"surface",
+"number",
+"Exemple : 1000"
+);
 
-html+=champ("État actuel","etat","select","",[
+html+=champ(
+"État actuel",
+"etat",
+"select",
+"",
+[
 {value:"1",label:"Dégradé léger"},
 {value:"1.40",label:"Très encombré"},
 {value:"1.90",label:"Terrain fortement dégradé"}
-]);
+]
+);
 
-html+=champ("Accessibilité","acces","select","",[
+html+=champ(
+"Accessibilité",
+"acces",
+"select",
+"",
+[
 {value:"1",label:"Facile"},
 {value:"1.20",label:"Moyenne"},
 {value:"1.40",label:"Difficile"}
-]);
+]
+);
 
-html+=champ("Évacuation des déchets","evac","select","",[
+html+=champ(
+"Évacuation des déchets",
+"evac",
+"select",
+"",
+[
 {value:"0",label:"Non"},
 {value:"100",label:"Oui"}
-]);
+]
+);
+
 }
 
 q.innerHTML=html;
 }
-
 
 function val(id){
 
@@ -746,11 +704,11 @@ if(!element)return 0;
 return Number(element.value);
 }
 
-
 function arrondir(nombre){
-return Math.round(nombre/5)*5;
-}
 
+return Math.round(nombre/5)*5;
+
+}
 
 function calculer(){
 
@@ -761,20 +719,24 @@ let bas=0;
 let haut=0;
 let avertissement="";
 
-
 if(!devis||devis<=0){
-alert("Entre le montant de ton devis.");
-return false;
-}
 
+alert("Entre le montant de ton devis.");
+
+return false;
+
+}
 
 if(serviceActuel==="tonte"){
 
 const surface=val("surface");
 
 if(!surface||surface<=0){
+
 alert("Entre la surface à tondre.");
+
 return false;
+
 }
 
 let tauxBas;
@@ -811,16 +773,19 @@ haut*=facteur;
 
 bas+=val("evac");
 haut+=val("evac");
-}
 
+}
 
 if(serviceActuel==="haie"){
 
 const longueur=val("longueur");
 
 if(!longueur||longueur<=0){
+
 alert("Entre la longueur de la haie.");
+
 return false;
+
 }
 
 bas=longueur*4;
@@ -833,16 +798,19 @@ bas+=val("evac");
 haut+=val("evac");
 
 bas=Math.max(40,bas);
-}
 
+}
 
 if(serviceActuel==="debroussaillage"){
 
 const surface=val("surface");
 
 if(!surface||surface<=0){
+
 alert("Entre la surface.");
+
 return false;
+
 }
 
 bas=Math.max(60,surface*.35);
@@ -853,8 +821,8 @@ haut*=val("etat")*val("acces");
 
 bas+=val("evac");
 haut+=val("evac");
-}
 
+}
 
 if(serviceActuel==="elagage"){
 
@@ -869,9 +837,10 @@ haut*=val("typeElagage")*val("acces");
 bas+=val("evac");
 haut+=val("evac");
 
-avertissement="Pour les travaux en hauteur, une inspection réelle du chantier reste indispensable.";
-}
+avertissement=
+"Pour les travaux en hauteur, une inspection réelle du chantier reste indispensable.";
 
+}
 
 if(serviceActuel==="abattage"){
 
@@ -886,17 +855,21 @@ haut*=val("acces");
 bas+=val("evac");
 haut+=val("evac");
 
-avertissement="Pour un arbre proche d'une habitation, d'une route, d'une ligne électrique ou présentant un risque, un devis sur place est indispensable.";
-}
+avertissement=
+"Pour un arbre proche d'une habitation, d'une route, d'une ligne électrique ou présentant un risque, un devis sur place est indispensable.";
 
+}
 
 if(serviceActuel==="dessouchage"){
 
 const diametre=val("diametre");
 
 if(!diametre||diametre<=0){
+
 alert("Entre le diamètre de la souche.");
+
 return false;
+
 }
 
 let facteurTaille=Math.max(.7,diametre/50);
@@ -907,27 +880,34 @@ haut=500*facteurTaille;
 const methode=val("methode");
 
 if(methode===220){
+
 bas=Math.max(150,bas*.75);
 haut=Math.max(300,haut*.85);
+
 }
 
 if(methode===550){
+
 bas*=1.1;
 haut*=1.4;
+
 }
 
 bas*=val("acces");
 haut*=val("acces");
-}
 
+}
 
 if(serviceActuel==="arrachage"){
 
 const longueur=val("longueur");
 
 if(!longueur||longueur<=0){
+
 alert("Entre la longueur de la haie.");
+
 return false;
+
 }
 
 bas=longueur*20;
@@ -938,16 +918,19 @@ haut*=val("densite");
 
 bas+=val("evac");
 haut+=val("evac");
-}
 
+}
 
 if(serviceActuel==="entretien"){
 
 const surface=val("surface");
 
 if(!surface||surface<=0){
+
 alert("Entre la surface du jardin.");
+
 return false;
+
 }
 
 const heures=Math.max(1.5,surface/180);
@@ -959,16 +942,19 @@ bas*=val("niveau")*val("acces");
 haut*=val("niveau")*val("acces");
 
 bas=Math.max(50,bas);
-}
 
+}
 
 if(serviceActuel==="evacuation"){
 
 const volume=val("volume");
 
 if(!volume||volume<=0){
+
 alert("Entre le volume de déchets.");
+
 return false;
+
 }
 
 bas=Math.max(40,volume*30);
@@ -976,16 +962,19 @@ haut=Math.max(60,volume*60);
 
 bas*=val("typeDechet")*val("acces");
 haut*=val("typeDechet")*val("acces");
-}
 
+}
 
 if(serviceActuel==="remise"){
 
 const surface=val("surface");
 
 if(!surface||surface<=0){
+
 alert("Entre la surface du terrain.");
+
 return false;
+
 }
 
 const heures=Math.max(2,surface/120);
@@ -998,8 +987,8 @@ haut*=val("etat")*val("acces");
 
 bas+=val("evac");
 haut+=val("evac");
-}
 
+}
 
 bas*=zone;
 haut*=zone;
@@ -1010,7 +999,6 @@ haut=arrondir(haut);
 if(haut<=bas){
 haut=bas+50;
 }
-
 
 document.getElementById("prix").textContent=
 bas+" € – "+haut+" €";
@@ -1024,106 +1012,78 @@ bas+" €";
 document.getElementById("haut").textContent=
 haut+" €";
 
-
 const statut=document.getElementById("statut");
 
 statut.className="status";
 
 let texte="";
 
-
 if(devis<bas*.85){
 
 statut.textContent="🟢 Très bon prix";
+
 statut.classList.add("green");
 
-texte="Votre devis est inférieur à la fourchette estimée. Cela peut être intéressant, mais vérifiez bien ce qui est inclus dans la prestation.";
+texte=
+"Votre devis est inférieur à la fourchette estimée. Cela peut être intéressant, mais vérifiez bien ce qui est inclus dans la prestation.";
 
 }
 
 else if(devis<=haut){
 
 statut.textContent="🟢 Dans la moyenne";
+
 statut.classList.add("green");
 
-texte="Votre devis se situe dans la fourchette indicative estimée pour ce type de chantier.";
+texte=
+"Votre devis se situe dans la fourchette indicative estimée pour ce type de chantier.";
 
 }
 
 else if(devis<=haut*1.25){
 
 statut.textContent="🟠 Plutôt élevé";
+
 statut.classList.add("orange");
 
-texte="Votre devis est supérieur à la fourchette indicative. Vérifiez les prestations incluses, l'évacuation, l'accès et les éventuelles contraintes.";
+texte=
+"Votre devis est supérieur à la fourchette indicative. Vérifiez les prestations incluses, l'évacuation, l'accès et les éventuelles contraintes.";
 
 }
 
 else{
 
 statut.textContent="🔴 Très élevé";
+
 statut.classList.add("red");
 
-texte="Votre devis est nettement supérieur à notre estimation indicative. Demandez idéalement un ou deux autres devis avant de vous engager.";
+texte=
+"Votre devis est nettement supérieur à notre estimation indicative. Demandez idéalement un ou deux autres devis avant de vous engager.";
+
 }
 
-
 if(avertissement){
+
 texte+="<br><br>⚠️ "+avertissement;
+
 }
 
 document.getElementById("resultText").innerHTML=texte;
 
 return true;
+
 }
-
-
-/* ================================
-   AVANT PAIEMENT
-   ================================ */
 
 function preparerPaiement(){
 
-/* TOUJOURS cacher le résultat */
-document.getElementById("resultat").classList.remove("show");
+document.getElementById("resultat")
+.classList.remove("show");
 
-/* Calcul interne uniquement */
 const ok=calculer();
 
 if(!ok)return;
 
 estimationPrete=true;
-
-/* Affiche UNIQUEMENT le paiement */
-document.getElementById("paiement").classList.remove("hidden");
-
-document.getElementById("paiement").scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-}
-
-
-/* ================================
-   STRIPE
-   ================================ */
-
-function ouvrirStripe(){
-
-if(!estimationPrete){
-alert("Prépare d'abord ton estimation.");
-return;
-}
-
-/*
-On garde les données de l'estimation
-pendant le passage sur Stripe.
-*/
-
-sessionStorage.setItem(
-"prixJardinEstimationPrete",
-"1"
-);
 
 sessionStorage.setItem(
 "prixJardinService",
@@ -1135,39 +1095,230 @@ sessionStorage.setItem(
 document.getElementById("devis").value
 );
 
-window.location.href=STRIPE_URL;
+document.getElementById("paiement")
+.classList.remove("hidden");
+
+document.getElementById("paiement")
+.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
 }
 
+async function ouvrirStripe(){
 
-/* ================================
-   NOUVELLE ESTIMATION
-   ================================ */
+if(!estimationPrete){
+
+alert("Prépare d'abord ton estimation.");
+
+return;
+
+}
+
+const bouton=document.querySelector(
+"#paiement button"
+);
+
+bouton.disabled=true;
+
+bouton.textContent=
+"Préparation du paiement...";
+
+try{
+
+const response=await fetch(
+"/.netlify/functions/create-checkout",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+service:serviceActuel,
+devis:document.getElementById("devis").value
+})
+}
+);
+
+const data=await response.json();
+
+if(!response.ok||!data.url){
+
+throw new Error(
+data.error||"Erreur Stripe"
+);
+
+}
+
+window.location.href=data.url;
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Impossible de lancer le paiement. Vérifie la configuration Stripe/Netlify."
+);
+
+bouton.disabled=false;
+
+bouton.textContent=
+"Payer 9,99 € et voir mon résultat";
+
+}
+
+}
+
+async function verifierPaiement(){
+
+const params=
+new URLSearchParams(window.location.search);
+
+const sessionId=
+params.get("session_id");
+
+const payment=
+params.get("payment");
+
+if(payment!=="success"||!sessionId)return;
+
+document.getElementById("paiement")
+.classList.add("hidden");
+
+try{
+
+const response=await fetch(
+"/.netlify/functions/verify-payment?session_id="
++encodeURIComponent(sessionId),
+{
+cache:"no-store"
+}
+);
+
+const data=await response.json();
+
+if(!response.ok||data.paid!==true){
+
+alert(
+"Le paiement n'a pas pu être confirmé."
+);
+
+return;
+
+}
+
+const serviceSauvegarde=
+sessionStorage.getItem(
+"prixJardinService"
+);
+
+const devisSauvegarde=
+sessionStorage.getItem(
+"prixJardinDevis"
+);
+
+if(serviceSauvegarde){
+
+serviceActuel=serviceSauvegarde;
+
+}
+
+if(devisSauvegarde){
+
+document.getElementById("devis").value=
+devisSauvegarde;
+
+}
+
+afficherQuestions();
+
+if(devisSauvegarde){
+
+document.getElementById("devis").value=
+devisSauvegarde;
+
+}
+
+const ok=calculer();
+
+if(!ok){
+
+alert(
+"Impossible de retrouver votre estimation."
+);
+
+return;
+
+}
+
+document.getElementById("resultat")
+.classList.add("show");
+
+document.getElementById("resultat")
+.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+sessionStorage.removeItem(
+"prixJardinService"
+);
+
+sessionStorage.removeItem(
+"prixJardinDevis"
+);
+
+window.history.replaceState(
+{},
+document.title,
+window.location.pathname
+);
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Impossible de vérifier le paiement."
+);
+
+}
+
+}
 
 function recommencer(){
 
-document.getElementById("resultat").classList.remove("show");
+document.getElementById("resultat")
+.classList.remove("show");
 
-document.getElementById("paiement").classList.add("hidden");
+document.getElementById("paiement")
+.classList.add("hidden");
 
 document.getElementById("devis").value="";
 
 estimationPrete=false;
 
-sessionStorage.removeItem("prixJardinEstimationPrete");
-sessionStorage.removeItem("prixJardinService");
-sessionStorage.removeItem("prixJardinDevis");
+sessionStorage.removeItem(
+"prixJardinService"
+);
+
+sessionStorage.removeItem(
+"prixJardinDevis"
+);
 
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
+
 }
 
-
 afficherQuestions();
+
+verifierPaiement();
 
 </script>
 
 </body>
 </html>
-```
