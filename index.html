@@ -8,298 +8,275 @@
 <title>Prix Jardin - Vérifiez votre devis</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+background:#f4f7f3;
+color:#172018
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  background: #f4f7f3;
-  color: #172018;
+.container{
+width:100%;
+max-width:760px;
+margin:auto;
+padding:24px 16px 50px
 }
 
-.container {
-  width: 100%;
-  max-width: 760px;
-  margin: auto;
-  padding: 24px 16px 50px;
+.header{
+text-align:center;
+padding:18px 0 28px
 }
 
-.header {
-  text-align: center;
-  padding: 18px 0 28px;
+.logo{
+display:inline-block;
+font-size:15px;
+font-weight:800;
+color:#18833b;
+letter-spacing:1px;
+text-transform:uppercase;
+margin-bottom:12px
 }
 
-.logo {
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 800;
-  color: #18833b;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
+h1{
+margin:0;
+font-size:36px;
+line-height:1.08;
+letter-spacing:-1px
 }
 
-h1 {
-  margin: 0;
-  font-size: 36px;
-  line-height: 1.08;
-  letter-spacing: -1px;
+.subtitle{
+margin:14px auto 0;
+max-width:600px;
+color:#647064;
+font-size:17px;
+line-height:1.5
 }
 
-.subtitle {
-  margin: 14px auto 0;
-  max-width: 600px;
-  color: #647064;
-  font-size: 17px;
-  line-height: 1.5;
+.card{
+background:#fff;
+border-radius:22px;
+padding:24px;
+box-shadow:0 8px 30px rgba(0,0,0,.07);
+margin-bottom:18px
 }
 
-.card {
-  background: #ffffff;
-  border-radius: 22px;
-  padding: 24px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-  margin-bottom: 18px;
+.step{
+font-size:13px;
+font-weight:800;
+color:#18833b;
+text-transform:uppercase;
+letter-spacing:.8px;
+margin-bottom:8px
 }
 
-.step {
-  font-size: 13px;
-  font-weight: 800;
-  color: #18833b;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  margin-bottom: 8px;
+h2{
+margin:0 0 18px;
+font-size:24px
 }
 
-h2 {
-  margin: 0 0 18px;
-  font-size: 24px;
+label{
+display:block;
+margin:18px 0 8px;
+font-weight:700;
+font-size:15px
 }
 
-label {
-  display: block;
-  margin: 18px 0 8px;
-  font-weight: 700;
-  font-size: 15px;
+input,select{
+width:100%;
+padding:15px;
+border:1px solid #d2d9d2;
+border-radius:12px;
+background:#fff;
+color:#172018;
+font-size:16px;
+outline:none
 }
 
-input,
-select {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #d2d9d2;
-  border-radius: 12px;
-  background: #fff;
-  color: #172018;
-  font-size: 16px;
-  outline: none;
+input:focus,select:focus{
+border-color:#18833b;
+box-shadow:0 0 0 3px rgba(24,131,59,.10)
 }
 
-input:focus,
-select:focus {
-  border-color: #18833b;
-  box-shadow: 0 0 0 3px rgba(24,131,59,.10);
+.service-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px
 }
 
-.service-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+.service{
+border:2px solid #e0e6e0;
+background:#fff;
+border-radius:15px;
+padding:15px 10px;
+text-align:center;
+cursor:pointer;
+font-weight:700;
+min-height:82px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+gap:5px;
+transition:.15s
 }
 
-.service {
-  border: 2px solid #e0e6e0;
-  background: #fff;
-  border-radius: 15px;
-  padding: 15px 10px;
-  text-align: center;
-  cursor: pointer;
-  font-weight: 700;
-  min-height: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  transition: .15s;
+.service span{font-size:27px}
+.service small{font-size:13px}
+
+.service.active{
+border-color:#18833b;
+background:#edf8ef
 }
 
-.service span {
-  font-size: 27px;
+button{
+width:100%;
+border:0;
+border-radius:13px;
+padding:16px;
+margin-top:22px;
+background:#18833b;
+color:#fff;
+font-size:17px;
+font-weight:800;
+cursor:pointer
 }
 
-.service small {
-  font-size: 13px;
+button:active{transform:scale(.99)}
+
+.secondary{
+background:#eef3ee;
+color:#172018
 }
 
-.service.active {
-  border-color: #18833b;
-  background: #edf8ef;
+.hidden{
+display:none!important
 }
 
-button {
-  width: 100%;
-  border: 0;
-  border-radius: 13px;
-  padding: 16px;
-  margin-top: 22px;
-  background: #18833b;
-  color: white;
-  font-size: 17px;
-  font-weight: 800;
-  cursor: pointer;
+.payment-box{
+margin-top:20px;
+padding:22px;
+border-radius:20px;
+background:#f0f8f1;
+border:1px solid #cce5cf;
+text-align:center
 }
 
-button:active {
-  transform: scale(.99);
+.payment-title{
+font-size:14px;
+color:#617061;
+font-weight:700
 }
 
-.secondary {
-  background: #eef3ee;
-  color: #172018;
+.payment-price{
+font-size:37px;
+font-weight:900;
+margin:8px 0;
+color:#155f2d
 }
 
-.hidden {
-  display: none !important;
+.payment-text{
+color:#465246;
+line-height:1.5;
+font-size:15px
 }
 
-.payment-box {
-  margin-top: 20px;
-  padding: 22px;
-  border-radius: 20px;
-  background: #f0f8f1;
-  border: 1px solid #cce5cf;
-  text-align: center;
+.result{
+display:none;
+margin-top:20px;
+border-radius:20px;
+padding:22px;
+text-align:center;
+background:#f0f8f1;
+border:1px solid #cce5cf
 }
 
-.payment-title {
-  font-size: 14px;
-  color: #617061;
-  font-weight: 700;
+.result.show{
+display:block
 }
 
-.payment-price {
-  font-size: 37px;
-  font-weight: 900;
-  margin: 8px 0;
-  color: #155f2d;
+.result-title{
+font-size:14px;
+color:#617061;
+font-weight:700
 }
 
-.payment-text {
-  color: #465246;
-  line-height: 1.5;
-  font-size: 15px;
+.price{
+font-size:37px;
+font-weight:900;
+margin:8px 0;
+color:#155f2d
 }
 
-.result {
-  display: none;
-  margin-top: 20px;
-  border-radius: 20px;
-  padding: 22px;
-  text-align: center;
-  background: #f0f8f1;
-  border: 1px solid #cce5cf;
+.status{
+display:inline-block;
+border-radius:30px;
+padding:8px 15px;
+font-weight:800;
+margin:8px 0 15px
 }
 
-.result.show {
-  display: block;
+.green{
+background:#dff3e2;
+color:#176b2d
 }
 
-.result-title {
-  font-size: 14px;
-  color: #617061;
-  font-weight: 700;
+.orange{
+background:#fff0d2;
+color:#8a5700
 }
 
-.price {
-  font-size: 37px;
-  font-weight: 900;
-  margin: 8px 0;
-  color: #155f2d;
+.red{
+background:#ffe1e1;
+color:#a52222
 }
 
-.status {
-  display: inline-block;
-  border-radius: 30px;
-  padding: 8px 15px;
-  font-weight: 800;
-  margin: 8px 0 15px;
+.result-text{
+color:#465246;
+line-height:1.5;
+font-size:15px
 }
 
-.green {
-  background: #dff3e2;
-  color: #176b2d;
+.detail{
+margin-top:16px;
+padding-top:15px;
+border-top:1px solid #d8e5d9;
+text-align:left
 }
 
-.orange {
-  background: #fff0d2;
-  color: #8a5700;
+.detail-row{
+display:flex;
+justify-content:space-between;
+gap:10px;
+padding:7px 0;
+font-size:14px
 }
 
-.red {
-  background: #ffe1e1;
-  color: #a52222;
+.warning{
+margin-top:15px;
+padding:13px;
+border-radius:12px;
+background:#fff8e8;
+color:#71530e;
+font-size:13px;
+line-height:1.45;
+text-align:left
 }
 
-.result-text {
-  color: #465246;
-  line-height: 1.5;
-  font-size: 15px;
+.footer{
+text-align:center;
+color:#778077;
+font-size:12px;
+line-height:1.5;
+margin-top:25px
 }
 
-.detail {
-  margin-top: 16px;
-  padding-top: 15px;
-  border-top: 1px solid #d8e5d9;
-  text-align: left;
-}
-
-.detail-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 7px 0;
-  font-size: 14px;
-}
-
-.warning {
-  margin-top: 15px;
-  padding: 13px;
-  border-radius: 12px;
-  background: #fff8e8;
-  color: #71530e;
-  font-size: 13px;
-  line-height: 1.45;
-  text-align: left;
-}
-
-.footer {
-  text-align: center;
-  color: #778077;
-  font-size: 12px;
-  line-height: 1.5;
-  margin-top: 25px;
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 31px;
-  }
-
-  .card {
-    padding: 19px;
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .price,
-  .payment-price {
-    font-size: 31px;
-  }
+@media(max-width:480px){
+h1{font-size:31px}
+.card{padding:19px}
+.service-grid{grid-template-columns:1fr 1fr}
+.price,.payment-price{font-size:31px}
 }
 </style>
 </head>
@@ -308,1158 +285,882 @@ button:active {
 
 <div class="container">
 
-  <div class="header">
-    <div class="logo">Prix Jardin</div>
+<div class="header">
+<div class="logo">Prix Jardin</div>
 
-    <h1>Votre devis est-il au bon prix ?</h1>
+<h1>Votre devis est-il au bon prix ?</h1>
 
-    <p class="subtitle">
-      Estimez en quelques secondes le prix habituellement constaté
-      pour vos travaux de jardin.
-    </p>
-  </div>
+<p class="subtitle">
+Estimez en quelques secondes le prix habituellement constaté
+pour vos travaux de jardin.
+</p>
+</div>
 
-  <div class="card">
+<div class="card">
 
-    <div class="step">Étape 1</div>
-    <h2>Quel travail voulez-vous estimer ?</h2>
+<div class="step">Étape 1</div>
+<h2>Quel travail voulez-vous estimer ?</h2>
 
-    <div class="service-grid">
+<div class="service-grid">
 
-      <div class="service active" onclick="choisirService('tonte', this)">
-        <span>🌱</span>
-        <small>Tonte</small>
-      </div>
+<div class="service active" onclick="choisirService('tonte',this)">
+<span>🌱</span><small>Tonte</small>
+</div>
 
-      <div class="service" onclick="choisirService('haie', this)">
-        <span>✂️</span>
-        <small>Taille de haie</small>
-      </div>
+<div class="service" onclick="choisirService('haie',this)">
+<span>✂️</span><small>Taille de haie</small>
+</div>
 
-      <div class="service" onclick="choisirService('debroussaillage', this)">
-        <span>🌿</span>
-        <small>Débroussaillage</small>
-      </div>
+<div class="service" onclick="choisirService('debroussaillage',this)">
+<span>🌿</span><small>Débroussaillage</small>
+</div>
 
-      <div class="service" onclick="choisirService('elagage', this)">
-        <span>🌳</span>
-        <small>Élagage</small>
-      </div>
+<div class="service" onclick="choisirService('elagage',this)">
+<span>🌳</span><small>Élagage</small>
+</div>
 
-      <div class="service" onclick="choisirService('abattage', this)">
-        <span>🪵</span>
-        <small>Abattage</small>
-      </div>
+<div class="service" onclick="choisirService('abattage',this)">
+<span>🪵</span><small>Abattage</small>
+</div>
 
-      <div class="service" onclick="choisirService('dessouchage', this)">
-        <span>🪴</span>
-        <small>Dessouchage</small>
-      </div>
+<div class="service" onclick="choisirService('dessouchage',this)">
+<span>🪴</span><small>Dessouchage</small>
+</div>
 
-      <div class="service" onclick="choisirService('arrachage', this)">
-        <span>🌳</span>
-        <small>Arrachage de haie</small>
-      </div>
+<div class="service" onclick="choisirService('arrachage',this)">
+<span>🌳</span><small>Arrachage de haie</small>
+</div>
 
-      <div class="service" onclick="choisirService('entretien', this)">
-        <span>🧹</span>
-        <small>Entretien jardin</small>
-      </div>
+<div class="service" onclick="choisirService('entretien',this)">
+<span>🧹</span><small>Entretien jardin</small>
+</div>
 
-      <div class="service" onclick="choisirService('evacuation', this)">
-        <span>🚛</span>
-        <small>Évacuation déchets</small>
-      </div>
+<div class="service" onclick="choisirService('evacuation',this)">
+<span>🚛</span><small>Évacuation déchets</small>
+</div>
 
-      <div class="service" onclick="choisirService('remise', this)">
-        <span>🏡</span>
-        <small>Remise en état</small>
-      </div>
+<div class="service" onclick="choisirService('remise',this)">
+<span>🏡</span><small>Remise en état</small>
+</div>
 
-    </div>
-  </div>
+</div>
+</div>
 
-  <div class="card">
+<div class="card">
 
-    <div class="step">Étape 2</div>
-    <h2>Quelques informations</h2>
+<div class="step">Étape 2</div>
+<h2>Quelques informations</h2>
 
-    <label for="zone">Zone géographique</label>
+<label for="zone">Zone géographique</label>
 
-    <select id="zone">
-      <option value="1">France — moyenne nationale</option>
-      <option value="1.10">Grande ville / agglomération</option>
-      <option value="1.20">Île-de-France</option>
-      <option value="0.95">Zone rurale / faible densité</option>
-    </select>
+<select id="zone">
+<option value="1">France — moyenne nationale</option>
+<option value="1.10">Grande ville / agglomération</option>
+<option value="1.20">Île-de-France</option>
+<option value="0.95">Zone rurale / faible densité</option>
+</select>
 
-    <div id="questions"></div>
+<div id="questions"></div>
 
-    <label for="devis">
-      Montant de votre devis
-    </label>
+<label for="devis">Montant de votre devis</label>
 
-    <input
-      type="number"
-      id="devis"
-      placeholder="Exemple : 450"
-      min="0"
-      step="1"
-    >
+<input
+type="number"
+id="devis"
+placeholder="Exemple : 450"
+min="0"
+step="1"
+>
 
-    <button onclick="preparerPaiement()">
-      Voir mon estimation — 9,99 €
-    </button>
+<button onclick="preparerPaiement()">
+Continuer — 9,99 €
+</button>
 
-    <div id="paiement" class="payment-box hidden">
+<div id="paiement" class="payment-box hidden">
 
-      <div class="payment-title">
-        Votre estimation est prête
-      </div>
+<div class="payment-title">
+Estimation prête
+</div>
 
-      <div class="payment-price">
-        9,99 €
-      </div>
+<div class="payment-price">
+9,99 €
+</div>
 
-      <div class="payment-text">
-        Votre estimation personnalisée a été calculée.
-        <br>
-        Payez 9,99 € pour accéder au résultat.
-      </div>
+<div class="payment-text">
+Votre estimation personnalisée est prête.
+<br>
+Payez 9,99 € pour afficher votre résultat.
+</div>
 
-      <button onclick="ouvrirStripe()">
-        Payer 9,99 € et voir mon résultat
-      </button>
+<button onclick="ouvrirStripe()">
+Payer 9,99 € et voir mon résultat
+</button>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
-  <div id="resultat" class="result">
+<div id="resultat" class="result">
 
-    <div class="result-title">
-      Estimation indicative du prix
-    </div>
+<div class="result-title">
+Estimation indicative du prix
+</div>
 
-    <div id="prix" class="price"></div>
+<div id="prix" class="price"></div>
 
-    <div id="statut" class="status"></div>
+<div id="statut" class="status"></div>
 
-    <div id="resultText" class="result-text"></div>
+<div id="resultText" class="result-text"></div>
 
-    <div class="detail">
+<div class="detail">
 
-      <div class="detail-row">
-        <span>Votre devis</span>
-        <strong id="devisAffiche"></strong>
-      </div>
+<div class="detail-row">
+<span>Votre devis</span>
+<strong id="devisAffiche"></strong>
+</div>
 
-      <div class="detail-row">
-        <span>Fourchette basse</span>
-        <strong id="bas"></strong>
-      </div>
+<div class="detail-row">
+<span>Fourchette basse</span>
+<strong id="bas"></strong>
+</div>
 
-      <div class="detail-row">
-        <span>Fourchette haute</span>
-        <strong id="haut"></strong>
-      </div>
+<div class="detail-row">
+<span>Fourchette haute</span>
+<strong id="haut"></strong>
+</div>
 
-    </div>
+</div>
 
-    <div class="warning">
-      ⚠️ Cette estimation est indicative. Un chantier réel peut varier
-      selon la région, l'accès, le matériel nécessaire, l'état du terrain
-      et les contraintes particulières.
-    </div>
+<div class="warning">
+⚠️ Cette estimation est indicative. Un chantier réel peut varier
+selon la région, l'accès, le matériel nécessaire, l'état du terrain
+et les contraintes particulières.
+</div>
 
-    <button class="secondary" onclick="recommencer()">
-      Faire une nouvelle estimation
-    </button>
+<button class="secondary" onclick="recommencer()">
+Faire une nouvelle estimation
+</button>
 
-  </div>
+</div>
 
-  <div class="footer">
-    Prix Jardin — outil d'estimation indicative des travaux de jardin.
-    <br>
-    Les résultats ne constituent pas un devis professionnel.
-  </div>
+<div class="footer">
+Prix Jardin — outil d'estimation indicative des travaux de jardin.
+<br>
+Les résultats ne constituent pas un devis professionnel.
+</div>
 
 </div>
 
 <script>
 
-let serviceActuel = "tonte";
+let serviceActuel="tonte";
+let estimationPrete=false;
 
-const STRIPE_URL =
-  "https://buy.stripe.com/7sY8wO3bBfKu0fA1TqdEs00";
-
-let estimationPrete = false;
+const STRIPE_URL=
+"https://buy.stripe.com/7sY8wO3bBfKu0fA1TqdEs00";
 
 
-function choisirService(service, element) {
+function choisirService(service,element){
 
-  serviceActuel = service;
+serviceActuel=service;
 
-  document.querySelectorAll(".service").forEach(function(item) {
-    item.classList.remove("active");
-  });
+document.querySelectorAll(".service").forEach(function(item){
+item.classList.remove("active");
+});
 
-  element.classList.add("active");
+element.classList.add("active");
 
-  afficherQuestions();
+afficherQuestions();
 
-  document.getElementById("paiement").classList.add("hidden");
-  document.getElementById("resultat").classList.remove("show");
+document.getElementById("paiement").classList.add("hidden");
+document.getElementById("resultat").classList.remove("show");
 
-  estimationPrete = false;
+estimationPrete=false;
 }
 
 
-function champ(label, id, type = "number", placeholder = "", options = null) {
+function champ(label,id,type="number",placeholder="",options=null){
 
-  let html = `<label for="${id}">${label}</label>`;
+let html=`<label for="${id}">${label}</label>`;
 
-  if (options) {
+if(options){
 
-    html += `<select id="${id}">`;
+html+=`<select id="${id}">`;
 
-    options.forEach(function(option) {
-      html += `<option value="${option.value}">${option.label}</option>`;
-    });
+options.forEach(function(option){
+html+=`<option value="${option.value}">${option.label}</option>`;
+});
 
-    html += `</select>`;
+html+=`</select>`;
 
-  } else {
+}else{
 
-    html += `
-      <input
-        type="${type}"
-        id="${id}"
-        placeholder="${placeholder}"
-        min="0"
-        step="any"
-      >
-    `;
-  }
+html+=`
+<input
+type="${type}"
+id="${id}"
+placeholder="${placeholder}"
+min="0"
+step="any"
+>
+`;
+}
 
-  return html;
+return html;
 }
 
 
-function afficherQuestions() {
+function afficherQuestions(){
 
-  const q = document.getElementById("questions");
+const q=document.getElementById("questions");
+let html="";
 
-  let html = "";
 
+if(serviceActuel==="tonte"){
 
-  /* TONTE */
+html+=champ("Surface à tondre (m²)","surface","number","Exemple : 500");
 
-  if (serviceActuel === "tonte") {
+html+=champ("État de l'herbe","etat","select","",[
+{value:"1",label:"Entretien normal"},
+{value:"1.20",label:"Herbe haute"},
+{value:"1.45",label:"Très haute / difficile"}
+]);
 
-    html += champ(
-      "Surface à tondre (m²)",
-      "surface",
-      "number",
-      "Exemple : 500"
-    );
+html+=champ("Accessibilité","acces","select","",[
+{value:"1",label:"Facile"},
+{value:"1.12",label:"Moyenne"},
+{value:"1.25",label:"Difficile"}
+]);
 
-    html += champ(
-      "État de l'herbe",
-      "etat",
-      "select",
-      "",
-      [
-        {value: "1", label: "Entretien normal"},
-        {value: "1.20", label: "Herbe haute"},
-        {value: "1.45", label: "Très haute / difficile"}
-      ]
-    );
-
-    html += champ(
-      "Accessibilité",
-      "acces",
-      "select",
-      "",
-      [
-        {value: "1", label: "Facile"},
-        {value: "1.12", label: "Moyenne"},
-        {value: "1.25", label: "Difficile"}
-      ]
-    );
-
-    html += champ(
-      "Évacuation de l'herbe",
-      "evac",
-      "select",
-      "",
-      [
-        {value: "0", label: "Non"},
-        {value: "30", label: "Oui"}
-      ]
-    );
-  }
-
-
-  /* HAIE */
-
-  if (serviceActuel === "haie") {
-
-    html += champ(
-      "Longueur de la haie (m)",
-      "longueur",
-      "number",
-      "Exemple : 30"
-    );
-
-    html += champ(
-      "Hauteur",
-      "hauteur",
-      "select",
-      "",
-      [
-        {value: "1", label: "Moins de 1,5 m"},
-        {value: "1.25", label: "1,5 à 2 m"},
-        {value: "1.50", label: "2 à 3 m"},
-        {value: "1.80", label: "Plus de 3 m"}
-      ]
-    );
-
-    html += champ(
-      "Densité de la haie",
-      "densite",
-      "select",
-      "",
-      [
-        {value: "1", label: "Normale"},
-        {value: "1.20", label: "Dense"},
-        {value: "1.40", label: "Très dense"}
-      ]
-    );
-
-    html += champ(
-      "Évacuation des branches",
-      "evac",
-      "select",
-      "",
-      [
-        {value: "0", label: "Non"},
-        {value: "40", label: "Oui"}
-      ]
-    );
-  }
-
-
-  /* DÉBROUSSAILLAGE */
-
-  if (serviceActuel === "debroussaillage") {
-
-    html += champ(
-      "Surface à débroussailler (m²)",
-      "surface",
-      "number",
-      "Exemple : 1000"
-    );
-
-    html += champ(
-      "État du terrain",
-      "etat",
-      "select",
-      "",
-      [
-        {value: "1", label: "Végétation légère"},
-        {value: "1.25", label: "Végétation moyenne"},
-        {value: "1.55", label: "Terrain très encombré"}
-      ]
-    );
-
-    html += champ(
-      "Accessibilité",
-      "acces",
-      "select",
-      "",
-      [
-        {value: "1", label: "Facile"},
-        {value: "1.15", label: "Moyenne"},
-        {value: "1.30", label: "Difficile"}
-      ]
-    );
-
-    html += champ(
-      "Évacuation",
-      "evac",
-      "select",
-      "",
-      [
-        {value: "0", label: "Non"},
-        {value: "60", label: "Oui"}
-      ]
-    );
-  }
-
-
-  /* ÉLAGAGE */
-
-  if (serviceActuel === "elagage") {
-
-    html += champ(
-      "Hauteur de l'arbre",
-      "hauteur",
-      "select",
-      "",
-      [
-        {value: "160", label: "Moins de 5 m"},
-        {value: "375", label: "5 à 10 m"},
-        {value: "750", label: "10 à 15 m"},
-        {value: "1150", label: "15 à 20 m"},
-        {value: "1500", label: "Plus de 20 m"}
-      ]
-    );
-
-    html += champ(
-      "Type d'élagage",
-      "typeElagage",
-      "select",
-      "",
-      [
-        {value: "1", label: "Entretien"},
-        {value: "0.90", label: "Bois mort"},
-        {value: "1.10", label: "Adaptation / éclaircie"},
-        {value: "1.45", label: "Étêtage / intervention lourde"}
-      ]
-    );
-
-    html += champ(
-      "Difficulté d'accès",
-      "acces",
-      "select",
-      "",
-      [
-        {value: "1", label: "Facile"},
-        {value: "1.20", label: "Moyenne"},
-        {value: "1.45", label: "Difficile"}
-      ]
-    );
-
-    html += champ(
-      "Évacuation des branches",
-      "evac",
-      "select",
-      "",
-      [
-        {value: "0", label: "Non"},
-        {value: "50", label: "Oui"}
-      ]
-    );
-  }
-
-
-  /* ABATTAGE */
-
-  if (serviceActuel === "abattage") {
-
-    html += champ(
-      "Hauteur de l'arbre",
-      "hauteur",
-      "select",
-      "",
-      [
-        {value: "180", label: "2 à 5 m"},
-        {value: "300", label: "5 à 10 m"},
-        {value: "460", label: "10 à 15 m"},
-        {value: "600", label: "15 à 20 m"},
-        {value: "700", label: "20 à 25 m"},
-        {value: "850", label: "Plus de 25 m — devis recommandé"}
-      ]
-    );
-
-    html += champ(
-      "Difficulté du chantier",
-      "acces",
-      "select",
-      "",
-      [
-        {value: "1", label: "Facile / espace dégagé"},
-        {value: "1.25", label: "Moyenne"},
-        {value: "1.50", label: "Difficile / proche bâtiment"}
-      ]
-    );
-
-    html += champ(
-      "Évacuation du bois",
-      "evac",
-      "select",
-      "",
-      [
-        {value: "0", label: "Non"},
-        {value: "100", label: "Oui"}
-      ]
-    );
-  }
-
-
-  /* DESSOUCHAGE */
-
-  if (serviceActuel === "dessouchage") {
-
-    html += champ(
-      "Diamètre de la souche (cm)",
-      "diametre",
-      "number",
-      "Exemple : 50"
-    );
-
-    html += champ(
-      "Méthode",
-      "methode",
-      "select",
-      "",
-      [
-        {value: "220", label: "Manuel"},
-        {value: "325", label: "Rognage"},
-        {value: "550", label: "Mécanique"}
-      ]
-    );
-
-    html += champ(
-      "Accessibilité",
-      "acces",
-      "select",
-      "",
-      [
-        {value: "1", label: "Facile"},
-        {value: "1.20", label: "Moyenne"},
-        {value: "1.45", label: "Difficile"}
-      ]
-    );
-  }
-
-
-  /* ARRACHAGE HAIE */
-
-  if (serviceActuel === "arrachage") {
-
-    html += champ(
-      "Longueur de haie (m)",
-      "longueur",
-      "number",
-      "Exemple : 20"
-    );
-
-    html += champ(
-      "Densité / difficulté",
-      "densite",
-      "select",
-      "",
-      [
-        {value: "1", label: "Normale"},
-        {value: "1.25", label: "Dense"},
-        {value: "1.50", label: "Très dense / ancienne"}
-      ]
-    );
-
-    html += champ(
-      "Évacuation",
-      "evac",
-      "select",
-      "",
-      [
-        {value: "0", label: "Non"},
-        {value: "80", label: "Oui"}
-      ]
-    );
-  }
-
-
-  /* ENTRETIEN */
-
-  if (serviceActuel === "entretien") {
-
-    html += champ(
-      "Surface du jardin (m²)",
-      "surface",
-      "number",
-      "Exemple : 500"
-    );
-
-    html += champ(
-      "Niveau d'entretien",
-      "niveau",
-      "select",
-      "",
-      [
-        {value: "1", label: "Entretien léger"},
-        {value: "1.30", label: "Entretien classique"},
-        {value: "1.70", label: "Entretien important"}
-      ]
-    );
-
-    html += champ(
-      "Accessibilité",
-      "acces",
-      "select",
-      "",
-      [
-        {value: "1", label: "Facile"},
-        {value: "1.15", label: "Moyenne"},
-        {value: "1.30", label: "Difficile"}
-      ]
-    );
-  }
-
-
-  /* ÉVACUATION */
-
-  if (serviceActuel === "evacuation") {
-
-    html += champ(
-      "Volume de déchets (m³)",
-      "volume",
-      "number",
-      "Exemple : 2"
-    );
-
-    html += champ(
-      "Type de déchets",
-      "typeDechet",
-      "select",
-      "",
-      [
-        {value: "1", label: "Déchets verts légers"},
-        {value: "1.20", label: "Branches / taille de haie"},
-        {value: "1.40", label: "Gros volume / bois"}
-      ]
-    );
-
-    html += champ(
-      "Accès pour le véhicule",
-      "acces",
-      "select",
-      "",
-      [
-        {value: "1", label: "Facile"},
-        {value: "1.20", label: "Moyen"},
-        {value: "1.40", label: "Difficile"}
-      ]
-    );
-  }
-
-
-  /* REMISE EN ÉTAT */
-
-  if (serviceActuel === "remise") {
-
-    html += champ(
-      "Surface du terrain (m²)",
-      "surface",
-      "number",
-      "Exemple : 1000"
-    );
-
-    html += champ(
-      "État actuel",
-      "etat",
-      "select",
-      "",
-      [
-        {value: "1", label: "Dégradé léger"},
-        {value: "1.40", label: "Très encombré"},
-        {value: "1.90", label: "Terrain fortement dégradé"}
-      ]
-    );
-
-    html += champ(
-      "Accessibilité",
-      "acces",
-      "select",
-      "",
-      [
-        {value: "1", label: "Facile"},
-        {value: "1.20", label: "Moyenne"},
-        {value: "1.40", label: "Difficile"}
-      ]
-    );
-
-    html += champ(
-      "Évacuation des déchets",
-      "evac",
-      "select",
-      "",
-      [
-        {value: "0", label: "Non"},
-        {value: "100", label: "Oui"}
-      ]
-    );
-  }
-
-
-  q.innerHTML = html;
+html+=champ("Évacuation de l'herbe","evac","select","",[
+{value:"0",label:"Non"},
+{value:"30",label:"Oui"}
+]);
 }
 
 
-function val(id) {
+if(serviceActuel==="haie"){
 
-  const element = document.getElementById(id);
+html+=champ("Longueur de la haie (m)","longueur","number","Exemple : 30");
 
-  if (!element) {
-    return 0;
-  }
+html+=champ("Hauteur","hauteur","select","",[
+{value:"1",label:"Moins de 1,5 m"},
+{value:"1.25",label:"1,5 à 2 m"},
+{value:"1.50",label:"2 à 3 m"},
+{value:"1.80",label:"Plus de 3 m"}
+]);
 
-  return Number(element.value);
+html+=champ("Densité de la haie","densite","select","",[
+{value:"1",label:"Normale"},
+{value:"1.20",label:"Dense"},
+{value:"1.40",label:"Très dense"}
+]);
+
+html+=champ("Évacuation des branches","evac","select","",[
+{value:"0",label:"Non"},
+{value:"40",label:"Oui"}
+]);
 }
 
 
-function arrondir(nombre) {
+if(serviceActuel==="debroussaillage"){
 
-  return Math.round(nombre / 5) * 5;
+html+=champ("Surface à débroussailler (m²)","surface","number","Exemple : 1000");
 
+html+=champ("État du terrain","etat","select","",[
+{value:"1",label:"Végétation légère"},
+{value:"1.25",label:"Végétation moyenne"},
+{value:"1.55",label:"Terrain très encombré"}
+]);
+
+html+=champ("Accessibilité","acces","select","",[
+{value:"1",label:"Facile"},
+{value:"1.15",label:"Moyenne"},
+{value:"1.30",label:"Difficile"}
+]);
+
+html+=champ("Évacuation","evac","select","",[
+{value:"0",label:"Non"},
+{value:"60",label:"Oui"}
+]);
 }
 
 
-function calculer(preparation = false) {
-
-  const zone = val("zone");
-  const devis = val("devis");
-
-  let bas = 0;
-  let haut = 0;
-  let avertissement = "";
-
-
-  if (!devis || devis <= 0) {
-
-    alert("Entre le montant de ton devis.");
-
-    return false;
-  }
-
-
-  /* TONTE */
-
-  if (serviceActuel === "tonte") {
-
-    const surface = val("surface");
-
-    if (!surface || surface <= 0) {
-      alert("Entre la surface à tondre.");
-      return false;
-    }
-
-    let tauxBas;
-    let tauxHaut;
-
-    if (surface < 100) {
-      tauxBas = 0.50;
-      tauxHaut = 0.75;
-    }
-
-    else if (surface < 500) {
-      tauxBas = 0.30;
-      tauxHaut = 0.50;
-    }
-
-    else if (surface < 1000) {
-      tauxBas = 0.20;
-      tauxHaut = 0.35;
-    }
-
-    else if (surface < 2000) {
-      tauxBas = 0.18;
-      tauxHaut = 0.30;
-    }
-
-    else {
-      tauxBas = 0.15;
-      tauxHaut = 0.25;
-    }
-
-    bas = Math.max(30, surface * tauxBas);
-    haut = Math.max(50, surface * tauxHaut);
-
-    const facteur = val("etat") * val("acces");
-
-    bas *= facteur;
-    haut *= facteur;
-
-    bas += val("evac");
-    haut += val("evac");
-  }
-
-
-  /* HAIE */
-
-  if (serviceActuel === "haie") {
-
-    const longueur = val("longueur");
-
-    if (!longueur || longueur <= 0) {
-      alert("Entre la longueur de la haie.");
-      return false;
-    }
-
-    bas = longueur * 4;
-    haut = longueur * 8;
-
-    bas *= val("hauteur") * val("densite");
-    haut *= val("hauteur") * val("densite");
-
-    bas += val("evac");
-    haut += val("evac");
-
-    bas = Math.max(40, bas);
-  }
-
-
-  /* DÉBROUSSAILLAGE */
-
-  if (serviceActuel === "debroussaillage") {
-
-    const surface = val("surface");
-
-    if (!surface || surface <= 0) {
-      alert("Entre la surface.");
-      return false;
-    }
-
-    bas = Math.max(60, surface * 0.35);
-    haut = Math.max(100, surface * 0.80);
-
-    bas *= val("etat") * val("acces");
-    haut *= val("etat") * val("acces");
-
-    bas += val("evac");
-    haut += val("evac");
-  }
-
-
-  /* ÉLAGAGE */
-
-  if (serviceActuel === "elagage") {
-
-    const hauteur = val("hauteur");
-
-    bas = hauteur * 0.75;
-    haut = hauteur * 1.35;
-
-    bas *= val("typeElagage") * val("acces");
-    haut *= val("typeElagage") * val("acces");
-
-    bas += val("evac");
-    haut += val("evac");
-
-    avertissement =
-      "Pour les travaux en hauteur, une inspection réelle du chantier reste indispensable.";
-  }
-
-
-  /* ABATTAGE */
-
-  if (serviceActuel === "abattage") {
-
-    const hauteur = val("hauteur");
-
-    bas = hauteur * 0.72;
-    haut = hauteur * 1.08;
-
-    bas *= val("acces");
-    haut *= val("acces");
-
-    bas += val("evac");
-    haut += val("evac");
-
-    avertissement =
-      "Pour un arbre proche d'une habitation, d'une route, d'une ligne électrique ou présentant un risque, un devis sur place est indispensable.";
-  }
-
-
-  /* DESSOUCHAGE */
-
-  if (serviceActuel === "dessouchage") {
-
-    const diametre = val("diametre");
-
-    if (!diametre || diametre <= 0) {
-      alert("Entre le diamètre de la souche.");
-      return false;
-    }
-
-    let facteurTaille = Math.max(0.7, diametre / 50);
-
-    bas = 150 * facteurTaille;
-    haut = 500 * facteurTaille;
-
-    const methode = val("methode");
-
-    if (methode === 220) {
-      bas = Math.max(150, bas * 0.75);
-      haut = Math.max(300, haut * 0.85);
-    }
-
-    if (methode === 550) {
-      bas *= 1.1;
-      haut *= 1.4;
-    }
-
-    bas *= val("acces");
-    haut *= val("acces");
-  }
-
-
-  /* ARRACHAGE HAIE */
-
-  if (serviceActuel === "arrachage") {
-
-    const longueur = val("longueur");
-
-    if (!longueur || longueur <= 0) {
-      alert("Entre la longueur de la haie.");
-      return false;
-    }
-
-    bas = longueur * 20;
-    haut = longueur * 55;
-
-    bas *= val("densite");
-    haut *= val("densite");
-
-    bas += val("evac");
-    haut += val("evac");
-  }
-
-
-  /* ENTRETIEN */
-
-  if (serviceActuel === "entretien") {
-
-    const surface = val("surface");
-
-    if (!surface || surface <= 0) {
-      alert("Entre la surface du jardin.");
-      return false;
-    }
-
-    const heures = Math.max(1.5, surface / 180);
-
-    bas = heures * 25;
-    haut = heures * 50;
-
-    bas *= val("niveau") * val("acces");
-    haut *= val("niveau") * val("acces");
-
-    bas = Math.max(50, bas);
-  }
-
-
-  /* ÉVACUATION */
-
-  if (serviceActuel === "evacuation") {
-
-    const volume = val("volume");
-
-    if (!volume || volume <= 0) {
-      alert("Entre le volume de déchets.");
-      return false;
-    }
-
-    bas = Math.max(40, volume * 30);
-    haut = Math.max(60, volume * 60);
-
-    bas *= val("typeDechet") * val("acces");
-    haut *= val("typeDechet") * val("acces");
-  }
-
-
-  /* REMISE EN ÉTAT */
-
-  if (serviceActuel === "remise") {
-
-    const surface = val("surface");
-
-    if (!surface || surface <= 0) {
-      alert("Entre la surface du terrain.");
-      return false;
-    }
-
-    const heures = Math.max(2, surface / 120);
-
-    bas = heures * 30;
-    haut = heures * 55;
-
-    bas *= val("etat") * val("acces");
-    haut *= val("etat") * val("acces");
-
-    bas += val("evac");
-    haut += val("evac");
-  }
-
-
-  /* ZONE */
-
-  bas *= zone;
-  haut *= zone;
-
-
-  /* NETTOYAGE FINAL */
-
-  bas = arrondir(bas);
-  haut = arrondir(haut);
-
-
-  if (haut <= bas) {
-    haut = bas + 50;
-  }
-
-
-  /* AFFICHAGE */
-
-  document.getElementById("prix").textContent =
-    bas + " € – " + haut + " €";
-
-  document.getElementById("devisAffiche").textContent =
-    devis + " €";
-
-  document.getElementById("bas").textContent =
-    bas + " €";
-
-  document.getElementById("haut").textContent =
-    haut + " €";
-
-
-  const statut = document.getElementById("statut");
-
-  statut.className = "status";
-
-
-  let texte = "";
-
-
-  if (devis < bas * 0.85) {
-
-    statut.textContent = "🟢 Très bon prix";
-    statut.classList.add("green");
-
-    texte =
-      "Votre devis est inférieur à la fourchette estimée. Cela peut être intéressant, mais vérifiez bien ce qui est inclus dans la prestation.";
-
-  }
-
-  else if (devis <= haut) {
-
-    statut.textContent = "🟢 Dans la moyenne";
-    statut.classList.add("green");
-
-    texte =
-      "Votre devis se situe dans la fourchette indicative estimée pour ce type de chantier.";
-
-  }
-
-  else if (devis <= haut * 1.25) {
-
-    statut.textContent = "🟠 Plutôt élevé";
-    statut.classList.add("orange");
-
-    texte =
-      "Votre devis est supérieur à la fourchette indicative. Vérifiez les prestations incluses, l'évacuation, l'accès et les éventuelles contraintes.";
-
-  }
-
-  else {
-
-    statut.textContent = "🔴 Très élevé";
-    statut.classList.add("red");
-
-    texte =
-      "Votre devis est nettement supérieur à notre estimation indicative. Demandez idéalement un ou deux autres devis avant de vous engager.";
-  }
-
-
-  if (avertissement) {
-
-    texte += "<br><br>⚠️ " + avertissement;
-  }
-
-
-  document.getElementById("resultText").innerHTML = texte;
-
-
-  /*
-    IMPORTANT :
-    Pendant la préparation du paiement, le résultat
-    est calculé mais reste invisible.
-  */
-
-  if (!preparation) {
-
-    document.getElementById("resultat").classList.add("show");
-
-    document.getElementById("resultat").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  }
-
-  return true;
+if(serviceActuel==="elagage"){
+
+html+=champ("Hauteur de l'arbre","hauteur","select","",[
+{value:"160",label:"Moins de 5 m"},
+{value:"375",label:"5 à 10 m"},
+{value:"750",label:"10 à 15 m"},
+{value:"1150",label:"15 à 20 m"},
+{value:"1500",label:"Plus de 20 m"}
+]);
+
+html+=champ("Type d'élagage","typeElagage","select","",[
+{value:"1",label:"Entretien"},
+{value:"0.90",label:"Bois mort"},
+{value:"1.10",label:"Adaptation / éclaircie"},
+{value:"1.45",label:"Étêtage / intervention lourde"}
+]);
+
+html+=champ("Difficulté d'accès","acces","select","",[
+{value:"1",label:"Facile"},
+{value:"1.20",label:"Moyenne"},
+{value:"1.45",label:"Difficile"}
+]);
+
+html+=champ("Évacuation des branches","evac","select","",[
+{value:"0",label:"Non"},
+{value:"50",label:"Oui"}
+]);
 }
 
 
-function preparerPaiement() {
+if(serviceActuel==="abattage"){
 
-  document.getElementById("resultat").classList.remove("show");
+html+=champ("Hauteur de l'arbre","hauteur","select","",[
+{value:"180",label:"2 à 5 m"},
+{value:"300",label:"5 à 10 m"},
+{value:"460",label:"10 à 15 m"},
+{value:"600",label:"15 à 20 m"},
+{value:"700",label:"20 à 25 m"},
+{value:"850",label:"Plus de 25 m — devis recommandé"}
+]);
 
-  const ok = calculer(true);
+html+=champ("Difficulté du chantier","acces","select","",[
+{value:"1",label:"Facile / espace dégagé"},
+{value:"1.25",label:"Moyenne"},
+{value:"1.50",label:"Difficile / proche bâtiment"}
+]);
 
-  if (!ok) {
-    return;
-  }
-
-  estimationPrete = true;
-
-  document.getElementById("paiement").classList.remove("hidden");
-
-  document.getElementById("paiement").scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
+html+=champ("Évacuation du bois","evac","select","",[
+{value:"0",label:"Non"},
+{value:"100",label:"Oui"}
+]);
 }
 
 
-function ouvrirStripe() {
+if(serviceActuel==="dessouchage"){
 
-  if (!estimationPrete) {
-    alert("Prépare d'abord ton estimation.");
-    return;
-  }
+html+=champ("Diamètre de la souche (cm)","diametre","number","Exemple : 50");
 
-  /*
-    On mémorise que l'utilisateur avait préparé
-    une estimation avant de partir sur Stripe.
-  */
+html+=champ("Méthode","methode","select","",[
+{value:"220",label:"Manuel"},
+{value:"325",label:"Rognage"},
+{value:"550",label:"Mécanique"}
+]);
 
-  sessionStorage.setItem(
-    "prixJardinEstimationPrete",
-    "1"
-  );
-
-  window.location.href = STRIPE_URL;
+html+=champ("Accessibilité","acces","select","",[
+{value:"1",label:"Facile"},
+{value:"1.20",label:"Moyenne"},
+{value:"1.45",label:"Difficile"}
+]);
 }
 
 
-function recommencer() {
+if(serviceActuel==="arrachage"){
 
-  document.getElementById("resultat").classList.remove("show");
+html+=champ("Longueur de haie (m)","longueur","number","Exemple : 20");
 
-  document.getElementById("paiement").classList.add("hidden");
+html+=champ("Densité / difficulté","densite","select","",[
+{value:"1",label:"Normale"},
+{value:"1.25",label:"Dense"},
+{value:"1.50",label:"Très dense / ancienne"}
+]);
 
-  document.getElementById("devis").value = "";
+html+=champ("Évacuation","evac","select","",[
+{value:"0",label:"Non"},
+{value:"80",label:"Oui"}
+]);
+}
 
-  estimationPrete = false;
 
-  sessionStorage.removeItem("prixJardinEstimationPrete");
+if(serviceActuel==="entretien"){
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+html+=champ("Surface du jardin (m²)","surface","number","Exemple : 500");
+
+html+=champ("Niveau d'entretien","niveau","select","",[
+{value:"1",label:"Entretien léger"},
+{value:"1.30",label:"Entretien classique"},
+{value:"1.70",label:"Entretien important"}
+]);
+
+html+=champ("Accessibilité","acces","select","",[
+{value:"1",label:"Facile"},
+{value:"1.15",label:"Moyenne"},
+{value:"1.30",label:"Difficile"}
+]);
+}
+
+
+if(serviceActuel==="evacuation"){
+
+html+=champ("Volume de déchets (m³)","volume","number","Exemple : 2");
+
+html+=champ("Type de déchets","typeDechet","select","",[
+{value:"1",label:"Déchets verts légers"},
+{value:"1.20",label:"Branches / taille de haie"},
+{value:"1.40",label:"Gros volume / bois"}
+]);
+
+html+=champ("Accès pour le véhicule","acces","select","",[
+{value:"1",label:"Facile"},
+{value:"1.20",label:"Moyen"},
+{value:"1.40",label:"Difficile"}
+]);
+}
+
+
+if(serviceActuel==="remise"){
+
+html+=champ("Surface du terrain (m²)","surface","number","Exemple : 1000");
+
+html+=champ("État actuel","etat","select","",[
+{value:"1",label:"Dégradé léger"},
+{value:"1.40",label:"Très encombré"},
+{value:"1.90",label:"Terrain fortement dégradé"}
+]);
+
+html+=champ("Accessibilité","acces","select","",[
+{value:"1",label:"Facile"},
+{value:"1.20",label:"Moyenne"},
+{value:"1.40",label:"Difficile"}
+]);
+
+html+=champ("Évacuation des déchets","evac","select","",[
+{value:"0",label:"Non"},
+{value:"100",label:"Oui"}
+]);
+}
+
+q.innerHTML=html;
+}
+
+
+function val(id){
+
+const element=document.getElementById(id);
+
+if(!element)return 0;
+
+return Number(element.value);
+}
+
+
+function arrondir(nombre){
+return Math.round(nombre/5)*5;
+}
+
+
+function calculer(){
+
+const zone=val("zone");
+const devis=val("devis");
+
+let bas=0;
+let haut=0;
+let avertissement="";
+
+
+if(!devis||devis<=0){
+alert("Entre le montant de ton devis.");
+return false;
+}
+
+
+if(serviceActuel==="tonte"){
+
+const surface=val("surface");
+
+if(!surface||surface<=0){
+alert("Entre la surface à tondre.");
+return false;
+}
+
+let tauxBas;
+let tauxHaut;
+
+if(surface<100){
+tauxBas=.50;
+tauxHaut=.75;
+}
+else if(surface<500){
+tauxBas=.30;
+tauxHaut=.50;
+}
+else if(surface<1000){
+tauxBas=.20;
+tauxHaut=.35;
+}
+else if(surface<2000){
+tauxBas=.18;
+tauxHaut=.30;
+}
+else{
+tauxBas=.15;
+tauxHaut=.25;
+}
+
+bas=Math.max(30,surface*tauxBas);
+haut=Math.max(50,surface*tauxHaut);
+
+const facteur=val("etat")*val("acces");
+
+bas*=facteur;
+haut*=facteur;
+
+bas+=val("evac");
+haut+=val("evac");
+}
+
+
+if(serviceActuel==="haie"){
+
+const longueur=val("longueur");
+
+if(!longueur||longueur<=0){
+alert("Entre la longueur de la haie.");
+return false;
+}
+
+bas=longueur*4;
+haut=longueur*8;
+
+bas*=val("hauteur")*val("densite");
+haut*=val("hauteur")*val("densite");
+
+bas+=val("evac");
+haut+=val("evac");
+
+bas=Math.max(40,bas);
+}
+
+
+if(serviceActuel==="debroussaillage"){
+
+const surface=val("surface");
+
+if(!surface||surface<=0){
+alert("Entre la surface.");
+return false;
+}
+
+bas=Math.max(60,surface*.35);
+haut=Math.max(100,surface*.80);
+
+bas*=val("etat")*val("acces");
+haut*=val("etat")*val("acces");
+
+bas+=val("evac");
+haut+=val("evac");
+}
+
+
+if(serviceActuel==="elagage"){
+
+const hauteur=val("hauteur");
+
+bas=hauteur*.75;
+haut=hauteur*1.35;
+
+bas*=val("typeElagage")*val("acces");
+haut*=val("typeElagage")*val("acces");
+
+bas+=val("evac");
+haut+=val("evac");
+
+avertissement="Pour les travaux en hauteur, une inspection réelle du chantier reste indispensable.";
+}
+
+
+if(serviceActuel==="abattage"){
+
+const hauteur=val("hauteur");
+
+bas=hauteur*.72;
+haut=hauteur*1.08;
+
+bas*=val("acces");
+haut*=val("acces");
+
+bas+=val("evac");
+haut+=val("evac");
+
+avertissement="Pour un arbre proche d'une habitation, d'une route, d'une ligne électrique ou présentant un risque, un devis sur place est indispensable.";
+}
+
+
+if(serviceActuel==="dessouchage"){
+
+const diametre=val("diametre");
+
+if(!diametre||diametre<=0){
+alert("Entre le diamètre de la souche.");
+return false;
+}
+
+let facteurTaille=Math.max(.7,diametre/50);
+
+bas=150*facteurTaille;
+haut=500*facteurTaille;
+
+const methode=val("methode");
+
+if(methode===220){
+bas=Math.max(150,bas*.75);
+haut=Math.max(300,haut*.85);
+}
+
+if(methode===550){
+bas*=1.1;
+haut*=1.4;
+}
+
+bas*=val("acces");
+haut*=val("acces");
+}
+
+
+if(serviceActuel==="arrachage"){
+
+const longueur=val("longueur");
+
+if(!longueur||longueur<=0){
+alert("Entre la longueur de la haie.");
+return false;
+}
+
+bas=longueur*20;
+haut=longueur*55;
+
+bas*=val("densite");
+haut*=val("densite");
+
+bas+=val("evac");
+haut+=val("evac");
+}
+
+
+if(serviceActuel==="entretien"){
+
+const surface=val("surface");
+
+if(!surface||surface<=0){
+alert("Entre la surface du jardin.");
+return false;
+}
+
+const heures=Math.max(1.5,surface/180);
+
+bas=heures*25;
+haut=heures*50;
+
+bas*=val("niveau")*val("acces");
+haut*=val("niveau")*val("acces");
+
+bas=Math.max(50,bas);
+}
+
+
+if(serviceActuel==="evacuation"){
+
+const volume=val("volume");
+
+if(!volume||volume<=0){
+alert("Entre le volume de déchets.");
+return false;
+}
+
+bas=Math.max(40,volume*30);
+haut=Math.max(60,volume*60);
+
+bas*=val("typeDechet")*val("acces");
+haut*=val("typeDechet")*val("acces");
+}
+
+
+if(serviceActuel==="remise"){
+
+const surface=val("surface");
+
+if(!surface||surface<=0){
+alert("Entre la surface du terrain.");
+return false;
+}
+
+const heures=Math.max(2,surface/120);
+
+bas=heures*30;
+haut=heures*55;
+
+bas*=val("etat")*val("acces");
+haut*=val("etat")*val("acces");
+
+bas+=val("evac");
+haut+=val("evac");
+}
+
+
+bas*=zone;
+haut*=zone;
+
+bas=arrondir(bas);
+haut=arrondir(haut);
+
+if(haut<=bas){
+haut=bas+50;
+}
+
+
+document.getElementById("prix").textContent=
+bas+" € – "+haut+" €";
+
+document.getElementById("devisAffiche").textContent=
+devis+" €";
+
+document.getElementById("bas").textContent=
+bas+" €";
+
+document.getElementById("haut").textContent=
+haut+" €";
+
+
+const statut=document.getElementById("statut");
+
+statut.className="status";
+
+let texte="";
+
+
+if(devis<bas*.85){
+
+statut.textContent="🟢 Très bon prix";
+statut.classList.add("green");
+
+texte="Votre devis est inférieur à la fourchette estimée. Cela peut être intéressant, mais vérifiez bien ce qui est inclus dans la prestation.";
+
+}
+
+else if(devis<=haut){
+
+statut.textContent="🟢 Dans la moyenne";
+statut.classList.add("green");
+
+texte="Votre devis se situe dans la fourchette indicative estimée pour ce type de chantier.";
+
+}
+
+else if(devis<=haut*1.25){
+
+statut.textContent="🟠 Plutôt élevé";
+statut.classList.add("orange");
+
+texte="Votre devis est supérieur à la fourchette indicative. Vérifiez les prestations incluses, l'évacuation, l'accès et les éventuelles contraintes.";
+
+}
+
+else{
+
+statut.textContent="🔴 Très élevé";
+statut.classList.add("red");
+
+texte="Votre devis est nettement supérieur à notre estimation indicative. Demandez idéalement un ou deux autres devis avant de vous engager.";
+}
+
+
+if(avertissement){
+texte+="<br><br>⚠️ "+avertissement;
+}
+
+document.getElementById("resultText").innerHTML=texte;
+
+return true;
+}
+
+
+/* ================================
+   AVANT PAIEMENT
+   ================================ */
+
+function preparerPaiement(){
+
+/* TOUJOURS cacher le résultat */
+document.getElementById("resultat").classList.remove("show");
+
+/* Calcul interne uniquement */
+const ok=calculer();
+
+if(!ok)return;
+
+estimationPrete=true;
+
+/* Affiche UNIQUEMENT le paiement */
+document.getElementById("paiement").classList.remove("hidden");
+
+document.getElementById("paiement").scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+}
+
+
+/* ================================
+   STRIPE
+   ================================ */
+
+function ouvrirStripe(){
+
+if(!estimationPrete){
+alert("Prépare d'abord ton estimation.");
+return;
+}
+
+/*
+On garde les données de l'estimation
+pendant le passage sur Stripe.
+*/
+
+sessionStorage.setItem(
+"prixJardinEstimationPrete",
+"1"
+);
+
+sessionStorage.setItem(
+"prixJardinService",
+serviceActuel
+);
+
+sessionStorage.setItem(
+"prixJardinDevis",
+document.getElementById("devis").value
+);
+
+window.location.href=STRIPE_URL;
+}
+
+
+/* ================================
+   NOUVELLE ESTIMATION
+   ================================ */
+
+function recommencer(){
+
+document.getElementById("resultat").classList.remove("show");
+
+document.getElementById("paiement").classList.add("hidden");
+
+document.getElementById("devis").value="";
+
+estimationPrete=false;
+
+sessionStorage.removeItem("prixJardinEstimationPrete");
+sessionStorage.removeItem("prixJardinService");
+sessionStorage.removeItem("prixJardinDevis");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 }
 
 
