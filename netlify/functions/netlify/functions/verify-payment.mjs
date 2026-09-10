@@ -1,6 +1,12 @@
 export default async function (req) {
   if (req.method !== "GET") {
-    return new Response("Method Not Allowed", { status: 405 });
+    return new Response(
+      JSON.stringify({ paid: false }),
+      {
+        status: 405,
+        headers: { "Content-Type": "application/json" }
+      }
+    );
   }
 
   try {
@@ -48,10 +54,12 @@ export default async function (req) {
     const session = await response.json();
 
     if (!response.ok) {
+      console.error("Stripe error:", session);
+
       return new Response(
         JSON.stringify({
           paid: false,
-          error: "Session Stripe introuvable."
+          error: "Impossible de récupérer la session Stripe."
         }),
         {
           status: 400,
@@ -62,11 +70,16 @@ export default async function (req) {
 
     const paid =
       session.payment_status === "paid" &&
-      session.amount_total === 999 &&
+      Number(session.amount_total) === 999 &&
       session.currency === "eur";
 
     return new Response(
-      JSON.stringify({ paid }),
+      JSON.stringify({
+        paid: paid,
+        payment_status: session.payment_status,
+        amount_total: session.amount_total,
+        currency: session.currency
+      }),
       {
         status: 200,
         headers: {
@@ -77,13 +90,12 @@ export default async function (req) {
     );
 
   } catch (error) {
-
-    console.error(error);
+    console.error("Verification error:", error);
 
     return new Response(
       JSON.stringify({
         paid: false,
-        error: "Erreur lors de la vérification."
+        error: "Erreur lors de la vérification du paiement."
       }),
       {
         status: 500,
